@@ -52,6 +52,8 @@
             [sender setTitle:randomCard.contents forState:UIControlStateSelected];
         } else {
             [sender setTitle:@"X" forState:UIControlStateSelected];
+            self.flipsLabel.text = [NSString stringWithFormat:@"Deck empty"];
+            NSLog(@"The deck is empty");
         }
     } else {
         sender.selected = NO;
