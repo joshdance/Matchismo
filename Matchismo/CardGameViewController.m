@@ -12,57 +12,46 @@
 
 @interface CardGameViewController ()
 //IBOutlet is blank but used by xCode
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons; //array of cardbuttons
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
-@property (nonatomic, strong) PlayingCardDeck *viewDeck;
-
+@property (strong, nonatomic) Deck *deck;
 @end
 
 @implementation CardGameViewController
 
-//playing cards
+- (Deck *)deck
+{
+    if (!_deck) _deck = [[PlayingCardDeck alloc] init];
+    return _deck;
+}
 
-- (PlayingCardDeck *)viewDeck {
-    if (!_viewDeck) {
-        _viewDeck = [[PlayingCardDeck alloc] init];
+- (void)setCardButtons:(NSArray *)cardButtons
+{
+    _cardButtons = cardButtons;
+    for (UIButton *cardButton in self.cardButtons) {
+        Card *card = [self.deck drawRandomCard];
+        NSLog(@"There are %d card in the deck", self.deck.cardCount);
+        [cardButton setTitle:card.contents forState:UIControlStateSelected];
     }
-    return _viewDeck;
 }
 
 - (void)setFlipCount:(int)flipCount
 {
     _flipCount = flipCount;
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
-    NSLog(@"flips updated to %d", self.flipCount);
 }
 
 - (IBAction)flipCard:(UIButton *)sender
-//(IBAction)return type is void. Just typedef to know it is special method
 {
     //selected is the card. not selected is the apple back
-    
-    
-    
-    
     if (!sender.isSelected) {
         sender.selected = YES;
         self.flipCount++;
-        Card *randomCard = self.viewDeck.drawRandomCard;
-        if (randomCard) {
-            [sender setTitle:randomCard.contents forState:UIControlStateSelected];
-        } else {
-            [sender setTitle:@"X" forState:UIControlStateSelected];
-            self.flipsLabel.text = [NSString stringWithFormat:@"Deck empty"];
-            NSLog(@"The deck is empty");
-        }
     } else {
         sender.selected = NO;
-        NSLog(@"There are %d card in the deck", self.viewDeck.cardCount);
     }
-    
     //sender.selected = !sender.isSelected;
-    
-    
 }
 
 @end
