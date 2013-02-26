@@ -12,10 +12,10 @@
 
 @property (strong, nonatomic) NSString *contents;
 
-@property (nonatomic) BOOL faceUp;
-@property (nonatomic) BOOL unplayable;
+@property (nonatomic, getter=isFaceUp) BOOL faceUp;
+@property (nonatomic, getter=isUnPlayable) BOOL unplayable;
 
 //return type int, takes a pointer to a card named card
-- (int)match:(Card *)card;
+- (int)match:(NSArray *)otherCards;
 
 @end

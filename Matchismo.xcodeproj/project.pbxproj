@@ -22,6 +22,7 @@
 		4248500C16B9B90400BFDECB /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 4248500B16B9B90400BFDECB /* Card.m */; };
 		4248500F16B9B93900BFDECB /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4248500E16B9B93900BFDECB /* PlayingCard.m */; };
 		42A697EE16C3330F00CA281A /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A697ED16C3330F00CA281A /* PlayingCardDeck.m */; };
+		42D03C4616DC356400BBFE7E /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D03C4516DC356400BBFE7E /* CardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		4248500E16B9B93900BFDECB /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
 		42A697EC16C3330F00CA281A /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
 		42A697ED16C3330F00CA281A /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		42D03C4416DC356400BBFE7E /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
+		42D03C4516DC356400BBFE7E /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 		42E400A816D595FD0059B101 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42D03C4416DC356400BBFE7E /* CardMatchingGame.h */,
+				42D03C4516DC356400BBFE7E /* CardMatchingGame.m */,
 				4248500616B9B82900BFDECB /* Deck.h */,
 				4248500716B9B82900BFDECB /* Deck.m */,
 				42A697EC16C3330F00CA281A /* PlayingCardDeck.h */,
@@ -209,6 +214,7 @@
 				4248500C16B9B90400BFDECB /* Card.m in Sources */,
 				4248500F16B9B93900BFDECB /* PlayingCard.m in Sources */,
 				42A697EE16C3330F00CA281A /* PlayingCardDeck.m in Sources */,
+				42D03C4616DC356400BBFE7E /* CardMatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
